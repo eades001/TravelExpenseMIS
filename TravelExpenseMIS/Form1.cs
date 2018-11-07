@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TravelExpenseMIS
 {
-    public partial class Form1 : Form
+    public partial class travelExpenseForm : Form
     {
-        public Form1()
+        public travelExpenseForm()
         {
             InitializeComponent();
         }
