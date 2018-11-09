@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+/*****************************************/
+/*  Project 5:   Travel Expense MIS      */
+/*  Author:      Lynn Eades              */
+/*  Date:        11/12/2018              */
+/*****************************************/
 
 namespace TravelExpenseMIS
 {
@@ -15,6 +14,11 @@ namespace TravelExpenseMIS
         public travelExpenseForm()
         {
             InitializeComponent();
+        }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

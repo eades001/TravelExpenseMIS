@@ -31,7 +31,11 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.autoGroupBox = new System.Windows.Forms.GroupBox();
+            this.chevyRadioButton = new System.Windows.Forms.RadioButton();
+            this.buickRadioButton = new System.Windows.Forms.RadioButton();
             this.routeGroupBox = new System.Windows.Forms.GroupBox();
+            this.cityRadioButton = new System.Windows.Forms.RadioButton();
+            this.freewayRadioButton = new System.Windows.Forms.RadioButton();
             this.calculateButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
             this.mileageLabel = new System.Windows.Forms.Label();
@@ -42,10 +46,6 @@
             this.totalMilesValueLabel = new System.Windows.Forms.Label();
             this.totalCostValueLabel = new System.Windows.Forms.Label();
             this.gasPriceTextBox = new System.Windows.Forms.TextBox();
-            this.buickRadioButton = new System.Windows.Forms.RadioButton();
-            this.chevyRadioButton = new System.Windows.Forms.RadioButton();
-            this.freewayRadioButton = new System.Windows.Forms.RadioButton();
-            this.cityRadioButton = new System.Windows.Forms.RadioButton();
             this.autoGroupBox.SuspendLayout();
             this.routeGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,7 @@
             // 
             // autoGroupBox
             // 
+            this.autoGroupBox.BackColor = System.Drawing.Color.Tan;
             this.autoGroupBox.Controls.Add(this.chevyRadioButton);
             this.autoGroupBox.Controls.Add(this.buickRadioButton);
             this.autoGroupBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -81,6 +82,28 @@
             this.autoGroupBox.TabIndex = 2;
             this.autoGroupBox.TabStop = false;
             this.autoGroupBox.Text = " Auto ";
+            // 
+            // chevyRadioButton
+            // 
+            this.chevyRadioButton.AutoSize = true;
+            this.chevyRadioButton.Location = new System.Drawing.Point(20, 75);
+            this.chevyRadioButton.Name = "chevyRadioButton";
+            this.chevyRadioButton.Size = new System.Drawing.Size(142, 25);
+            this.chevyRadioButton.TabIndex = 1;
+            this.chevyRadioButton.TabStop = true;
+            this.chevyRadioButton.Text = "Chevy Lumina";
+            this.chevyRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // buickRadioButton
+            // 
+            this.buickRadioButton.AutoSize = true;
+            this.buickRadioButton.Location = new System.Drawing.Point(20, 35);
+            this.buickRadioButton.Name = "buickRadioButton";
+            this.buickRadioButton.Size = new System.Drawing.Size(133, 25);
+            this.buickRadioButton.TabIndex = 0;
+            this.buickRadioButton.TabStop = true;
+            this.buickRadioButton.Text = "Buick Electra";
+            this.buickRadioButton.UseVisualStyleBackColor = true;
             // 
             // routeGroupBox
             // 
@@ -94,25 +117,50 @@
             this.routeGroupBox.TabStop = false;
             this.routeGroupBox.Text = "Route";
             // 
+            // cityRadioButton
+            // 
+            this.cityRadioButton.AutoSize = true;
+            this.cityRadioButton.Location = new System.Drawing.Point(20, 77);
+            this.cityRadioButton.Name = "cityRadioButton";
+            this.cityRadioButton.Size = new System.Drawing.Size(59, 25);
+            this.cityRadioButton.TabIndex = 1;
+            this.cityRadioButton.TabStop = true;
+            this.cityRadioButton.Text = "City";
+            this.cityRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // freewayRadioButton
+            // 
+            this.freewayRadioButton.AutoSize = true;
+            this.freewayRadioButton.Location = new System.Drawing.Point(20, 37);
+            this.freewayRadioButton.Name = "freewayRadioButton";
+            this.freewayRadioButton.Size = new System.Drawing.Size(97, 25);
+            this.freewayRadioButton.TabIndex = 0;
+            this.freewayRadioButton.TabStop = true;
+            this.freewayRadioButton.Text = "Freeway";
+            this.freewayRadioButton.UseVisualStyleBackColor = true;
+            // 
             // calculateButton
             // 
-            this.calculateButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.calculateButton.BackColor = System.Drawing.Color.Linen;
+            this.calculateButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.calculateButton.Location = new System.Drawing.Point(50, 365);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(96, 43);
             this.calculateButton.TabIndex = 4;
             this.calculateButton.Text = "Calc";
-            this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.UseVisualStyleBackColor = false;
             // 
             // quitButton
             // 
-            this.quitButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.quitButton.BackColor = System.Drawing.Color.Linen;
+            this.quitButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.quitButton.Location = new System.Drawing.Point(153, 365);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(96, 43);
             this.quitButton.TabIndex = 5;
             this.quitButton.Text = "Quit";
-            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.UseVisualStyleBackColor = false;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // mileageLabel
             // 
@@ -183,55 +231,12 @@
             // 
             // gasPriceTextBox
             // 
+            this.gasPriceTextBox.BackColor = System.Drawing.Color.Linen;
             this.gasPriceTextBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.gasPriceTextBox.Location = new System.Drawing.Point(438, 252);
             this.gasPriceTextBox.Name = "gasPriceTextBox";
             this.gasPriceTextBox.Size = new System.Drawing.Size(67, 28);
             this.gasPriceTextBox.TabIndex = 14;
-            // 
-            // buickRadioButton
-            // 
-            this.buickRadioButton.AutoSize = true;
-            this.buickRadioButton.Location = new System.Drawing.Point(20, 35);
-            this.buickRadioButton.Name = "buickRadioButton";
-            this.buickRadioButton.Size = new System.Drawing.Size(133, 25);
-            this.buickRadioButton.TabIndex = 0;
-            this.buickRadioButton.TabStop = true;
-            this.buickRadioButton.Text = "Buick Electra";
-            this.buickRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // chevyRadioButton
-            // 
-            this.chevyRadioButton.AutoSize = true;
-            this.chevyRadioButton.Location = new System.Drawing.Point(20, 75);
-            this.chevyRadioButton.Name = "chevyRadioButton";
-            this.chevyRadioButton.Size = new System.Drawing.Size(142, 25);
-            this.chevyRadioButton.TabIndex = 1;
-            this.chevyRadioButton.TabStop = true;
-            this.chevyRadioButton.Text = "Chevy Lumina";
-            this.chevyRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // freewayRadioButton
-            // 
-            this.freewayRadioButton.AutoSize = true;
-            this.freewayRadioButton.Location = new System.Drawing.Point(20, 37);
-            this.freewayRadioButton.Name = "freewayRadioButton";
-            this.freewayRadioButton.Size = new System.Drawing.Size(97, 25);
-            this.freewayRadioButton.TabIndex = 0;
-            this.freewayRadioButton.TabStop = true;
-            this.freewayRadioButton.Text = "Freeway";
-            this.freewayRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // cityRadioButton
-            // 
-            this.cityRadioButton.AutoSize = true;
-            this.cityRadioButton.Location = new System.Drawing.Point(20, 77);
-            this.cityRadioButton.Name = "cityRadioButton";
-            this.cityRadioButton.Size = new System.Drawing.Size(59, 25);
-            this.cityRadioButton.TabIndex = 1;
-            this.cityRadioButton.TabStop = true;
-            this.cityRadioButton.Text = "City";
-            this.cityRadioButton.UseVisualStyleBackColor = true;
             // 
             // travelExpenseForm
             // 
@@ -253,6 +258,7 @@
             this.Controls.Add(this.autoGroupBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.titleLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "travelExpenseForm";
             this.Text = "Travel Expense System";
             this.autoGroupBox.ResumeLayout(false);
