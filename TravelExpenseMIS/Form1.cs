@@ -14,7 +14,7 @@ namespace TravelExpenseMIS
         // This is the object that will be set to the current auto chosen
         AutoMilageCalculator selectedAutoMileageCalculator;
 
-        // The distance of the city and freeway routes
+        // The distance for the city and freeway routes
         const int FREEWAY_DISTANCE_IN_MILES = 33;
         const int CITY_DISTANCE_IN_MILES = 21;
         
@@ -27,12 +27,12 @@ namespace TravelExpenseMIS
         {
             InitializeComponent();
 
-            // Set starting settings to Buick and freeway
+            // Set starting auto and route to Buick and freeway
             currentAutoSelected = buickRadioButton.Text;
             currentRouteSelected = freewayRadioButton.Text;
             currentRouteDistance = FREEWAY_DISTANCE_IN_MILES;
 
-            // Set the current auto mileage calculator for the Buick
+            // Set the current auto mileage calculator for the Buick Electra
             selectedAutoMileageCalculator = new AutoMilageCalculator("Buick Electra");
 
             // Update display values for the default Buick and city route
@@ -106,11 +106,12 @@ namespace TravelExpenseMIS
             totalCostValueLabel.ResetText();
         }
 
+        // Update values displayed when user changes auto or route; clear total price
         private void UpdateMileageAndTotalMilesLabels()
         {
-            totalCostValueLabel.ResetText();
             totalMilesValueLabel.Text = currentRouteDistance.ToString();
             mileageValueLabel.Text = selectedAutoMileageCalculator.GetMileageForRoute(currentRouteSelected).ToString();
+            totalCostValueLabel.ResetText();
         }
     }
 }
