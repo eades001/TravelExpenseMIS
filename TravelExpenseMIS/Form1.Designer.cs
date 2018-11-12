@@ -243,6 +243,7 @@
             this.gasPriceTextBox.Size = new System.Drawing.Size(67, 28);
             this.gasPriceTextBox.TabIndex = 1;
             this.gasPriceTextBox.TextChanged += new System.EventHandler(this.gasPriceTextBox_TextChanged);
+            this.gasPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gasPriceTextBox_KeyPress);
             // 
             // travelExpenseForm
             // 

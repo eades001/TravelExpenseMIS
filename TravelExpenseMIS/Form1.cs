@@ -113,5 +113,29 @@ namespace TravelExpenseMIS
             mileageValueLabel.Text = selectedAutoMileageCalculator.GetMileageForRoute(currentRouteSelected).ToString();
             totalCostValueLabel.ResetText();
         }
+
+        private void gasPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Get the ascii value of the key pressed
+            int pressedKey = (int)e.KeyChar;
+
+            // Allow only numbers, decimal point and backspace
+            if ((pressedKey < 48 || pressedKey > 57) && pressedKey != 46 && pressedKey != 8)
+            {
+                e.Handled = true;
+                return;
+            }
+            
+            // Allow only one decimal point to be entered
+            if (pressedKey == 46)
+            {
+                // Check for decimal point in the textbox contents
+                if (gasPriceTextBox.Text.Contains(e.KeyChar.ToString()))
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
     }
 }
