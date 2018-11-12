@@ -90,13 +90,14 @@
             this.chevyRadioButton.Name = "chevyRadioButton";
             this.chevyRadioButton.Size = new System.Drawing.Size(142, 25);
             this.chevyRadioButton.TabIndex = 1;
-            this.chevyRadioButton.TabStop = true;
             this.chevyRadioButton.Text = "Chevy Lumina";
             this.chevyRadioButton.UseVisualStyleBackColor = true;
+            this.chevyRadioButton.CheckedChanged += new System.EventHandler(this.chevyRadioButton_CheckedChanged);
             // 
             // buickRadioButton
             // 
             this.buickRadioButton.AutoSize = true;
+            this.buickRadioButton.Checked = true;
             this.buickRadioButton.Location = new System.Drawing.Point(20, 35);
             this.buickRadioButton.Name = "buickRadioButton";
             this.buickRadioButton.Size = new System.Drawing.Size(133, 25);
@@ -104,6 +105,7 @@
             this.buickRadioButton.TabStop = true;
             this.buickRadioButton.Text = "Buick Electra";
             this.buickRadioButton.UseVisualStyleBackColor = true;
+            this.buickRadioButton.CheckedChanged += new System.EventHandler(this.buickRadioButton_CheckedChanged);
             // 
             // routeGroupBox
             // 
@@ -124,13 +126,14 @@
             this.cityRadioButton.Name = "cityRadioButton";
             this.cityRadioButton.Size = new System.Drawing.Size(59, 25);
             this.cityRadioButton.TabIndex = 1;
-            this.cityRadioButton.TabStop = true;
             this.cityRadioButton.Text = "City";
             this.cityRadioButton.UseVisualStyleBackColor = true;
+            this.cityRadioButton.CheckedChanged += new System.EventHandler(this.cityRadioButton_CheckedChanged);
             // 
             // freewayRadioButton
             // 
             this.freewayRadioButton.AutoSize = true;
+            this.freewayRadioButton.Checked = true;
             this.freewayRadioButton.Location = new System.Drawing.Point(20, 37);
             this.freewayRadioButton.Name = "freewayRadioButton";
             this.freewayRadioButton.Size = new System.Drawing.Size(97, 25);
@@ -138,6 +141,7 @@
             this.freewayRadioButton.TabStop = true;
             this.freewayRadioButton.Text = "Freeway";
             this.freewayRadioButton.UseVisualStyleBackColor = true;
+            this.freewayRadioButton.CheckedChanged += new System.EventHandler(this.freewayRadioButton_CheckedChanged);
             // 
             // calculateButton
             // 
@@ -146,9 +150,10 @@
             this.calculateButton.Location = new System.Drawing.Point(50, 365);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(96, 43);
-            this.calculateButton.TabIndex = 4;
+            this.calculateButton.TabIndex = 2;
             this.calculateButton.Text = "Calc";
             this.calculateButton.UseVisualStyleBackColor = false;
+            this.calculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // quitButton
             // 
@@ -157,10 +162,10 @@
             this.quitButton.Location = new System.Drawing.Point(153, 365);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(96, 43);
-            this.quitButton.TabIndex = 5;
+            this.quitButton.TabIndex = 3;
             this.quitButton.Text = "Quit";
             this.quitButton.UseVisualStyleBackColor = false;
-            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
+            this.quitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // mileageLabel
             // 
@@ -236,7 +241,8 @@
             this.gasPriceTextBox.Location = new System.Drawing.Point(438, 252);
             this.gasPriceTextBox.Name = "gasPriceTextBox";
             this.gasPriceTextBox.Size = new System.Drawing.Size(67, 28);
-            this.gasPriceTextBox.TabIndex = 14;
+            this.gasPriceTextBox.TabIndex = 1;
+            this.gasPriceTextBox.TextChanged += new System.EventHandler(this.gasPriceTextBox_TextChanged);
             // 
             // travelExpenseForm
             // 
