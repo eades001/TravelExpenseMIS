@@ -126,7 +126,7 @@ namespace TravelExpenseMIS
                 return;
             }
             
-            // Allow only one decimal point to be entered
+            // Now check that only one decimal point was entered
             if (pressedKey == 46)
             {
                 // Check for decimal point in the textbox contents
