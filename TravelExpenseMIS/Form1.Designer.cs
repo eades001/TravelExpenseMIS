@@ -239,6 +239,7 @@
             this.gasPriceTextBox.BackColor = System.Drawing.Color.Linen;
             this.gasPriceTextBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.gasPriceTextBox.Location = new System.Drawing.Point(438, 252);
+            this.gasPriceTextBox.MaxLength = 6;
             this.gasPriceTextBox.Name = "gasPriceTextBox";
             this.gasPriceTextBox.Size = new System.Drawing.Size(67, 28);
             this.gasPriceTextBox.TabIndex = 1;

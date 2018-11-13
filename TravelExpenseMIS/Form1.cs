@@ -48,13 +48,20 @@ namespace TravelExpenseMIS
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            // Get price from user input
-            decimal gasPrice = Convert.ToDecimal(gasPriceTextBox.Text);
-            decimal cost = 0.0M;
+            // Get price from user input; Test that it can be converted to decimal (not null)
+            if (Decimal.TryParse(gasPriceTextBox.Text, out decimal dec))
+            {
+                decimal gasPrice = Convert.ToDecimal(gasPriceTextBox.Text);
+                decimal cost = 0.0M;
 
-            // Calculate using current route, distance for route, and price of gas entered
-            cost = selectedAutoMileageCalculator.CalculateCost(currentRouteSelected, currentRouteDistance, gasPrice);
-            totalCostValueLabel.Text = String.Format(cost.ToString("C2"));
+                // Calculate using current route, distance for route, and price of gas entered
+                cost = selectedAutoMileageCalculator.CalculateCost(currentRouteSelected, currentRouteDistance, gasPrice);
+                totalCostValueLabel.Text = String.Format(cost.ToString("C2"));
+            }
+            else // must be null
+            {
+                return;
+            }
         }
 
         private void buickRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -103,6 +110,7 @@ namespace TravelExpenseMIS
         
         private void gasPriceTextBox_TextChanged(object sender, EventArgs e)
         {
+            // Clear the total cost value because the selections have changed
             totalCostValueLabel.ResetText();
         }
 
@@ -114,6 +122,7 @@ namespace TravelExpenseMIS
             totalCostValueLabel.ResetText();
         }
 
+        // Checks for each key pressed for price and accepts only ints and one decimal point
         private void gasPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Get the ascii value of the key pressed
